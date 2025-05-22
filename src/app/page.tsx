@@ -64,7 +64,7 @@ export default function Home() {
 
     const fetchTemperaturas = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/temperatura");
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/temperatura`);
             const data = await res.json();
             setTemperaturas(data);
             if (data.length > 0) setUltimaTemp(data[data.length - 1]);
