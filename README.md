@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🌡️ Climinha
 
-First, run the development server:
+Aplicação web desenvolvida em **Next.js** que exibe a **temperatura atual** e um **histórico gráfico interativo**, com atualização automática a cada 30 segundos.
+
+---
+
+## 🔧 Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/)
+- [React](https://reactjs.org/)
+- [Chart.js](https://www.chartjs.org/) + [react-chartjs-2](https://react-chartjs-2.js.org/)
+- [chartjs-plugin-zoom](https://www.chartjs.org/chartjs-plugin-zoom/)
+- [Lucide Icons](https://lucide.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 📦 Instalação
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/fergrenteski/climinha-frontend
+cd climinha
+````
+
+2. **Instale as dependências:**
+
+```bash
+npm install
+# ou
+yarn install
+```
+
+3. **Configure as variáveis de ambiente:**
+
+Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
+
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+> Altere a URL conforme o endereço real da sua API.
+
+4. **Execute o projeto em modo desenvolvimento:**
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acesse em: [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔁 Funcionamento
 
-## Learn More
+* A temperatura é buscada via API a cada **30 segundos**.
+* A interface exibe:
 
-To learn more about Next.js, take a look at the following resources:
+    * Temperatura atual com ícone dinâmico colorido.
+    * Histórico com gráfico interativo (pan e zoom).
+    * Filtros por período: última hora, hoje, última semana, etc.
+* O gráfico usa **Chart.js** com plugin de zoom via scroll e pinça.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📁 Estrutura
 
-## Deploy on Vercel
+```bash
+/pages
+  └── page.tsx       # Página principal do app (Home)
+.env                  # Variáveis de ambiente
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Deploy
+
+Para produção, certifique-se de:
+
+* Configurar o `NEXT_PUBLIC_API_URL` com a URL pública da sua API.
+* Rodar:
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Sinta-se livre para abrir **issues**, enviar **pull requests** ou sugerir melhorias.
+
+---
+
+## 📄 Licença
+
+MIT
